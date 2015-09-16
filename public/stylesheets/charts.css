@@ -1,0 +1,13 @@
+.chart{
+	position: relative;
+	width: 90%;
+	padding: .2em 3em 3em 3em;
+	margin: auto;
+	background: #eee;
+	color: #111;
+}
+
+.chart h2{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}

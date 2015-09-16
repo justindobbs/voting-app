@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	div(class='container-fluid')
+		div(class='row')
+			div(class='col-sm-6 col-sm-offset-3')
+				h1= title
+				form#login(name="login",method="post",action="/login")
+					div( class='form-group')
+						label(for='inputUserName')	User Name
+						input#inputUserName(class='form-control' type="text", placeholder="username", name="username")
+					div( class='form-group')
+						label(for='inputPassword')	Password
+						input#inputPassword(class='form-control' type="password", placeholder="password", name="password")
+					input#submit(class='form-control' type='submit' value="Log In")
+				br
+				span= messages
+			

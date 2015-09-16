@@ -1,0 +1,67 @@
+extends layout
+
+block content
+	link(rel='stylesheet' href='stylesheets/card.css')
+	link(rel='stylesheet' href='stylesheets/radioInput.css')
+	
+	div(class='content')
+		nav#topNav(style='margin:0; border-radius: 0px' class='navbar navbar-default')
+			div(class='container-fluid')
+				div(class='navbar-header')
+					button(aria-expanded='false' data-toggle='collapse'  data-target='#app-nav-navbar-collapse-1' type='button' class='navbar-toggle collapsed')
+						span(class='sr-only')
+							|	Toggle Navigation
+						span(class='icon-bar')
+						span(class='icon-bar')
+						span(class='icon-bar')
+					a#brand(href='/' class='navbar-brand')
+						|	Voting App
+				div#app-nav-navbar-collapse-1(class='collapse navbar-collapse')
+					ul(class='nav navbar-nav navbar-right')
+						li
+						li(class='dropdown')
+							a(href='' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false')=	user.username
+								span(class='caret')
+							ul(class='dropdown-menu')
+								li
+									a(href='logout' class='text-underline')	Logout
+		div(class='app-ui')
+			ul(class='nav nav-pills')
+				li(role='presentation')
+					a#createPoll(href='app')
+						| Create Poll
+				li(role='presentation')
+					a#myPolls(href='myPolls')
+						|	My Polls
+				li(role='presentation' class='active')
+					a#publicPolls(href='publicPolls')
+						|	Public Polls
+			article(class='show-polls')
+				div#pollContainer(class='container poll-container')
+					div(class='row')
+						div(class='col-sm-8 col-sm-offset-2 col-xs-12')
+							div
+								each poll, i in polls
+									div(class='card')
+										div(class='card-top')
+											h2=	poll.poll
+										div(class='card-body center')
+											form#polleach(name="publicPolls",method="post",action="/publicPolls")
+												each option, i in poll.options		
+													div(class='card-list')
+														label(class='radio')
+															input(class='radioPoll' type='radio' value=option[1])
+															span(class='outer')
+																input(class='inner' name='id' value=poll._id )
+																input(class='hidden' name='poll' value=poll.poll )
+															div= option[1]
+												input#submitPoll(class='form-control' type='submit' value="submit")
+												details(class='center')=	poll.options
+												
+												//would need to refactor the get for this one
+												//a(href="#{'updatedPolls/' + poll.poll + username}") Show Chart
+												//br
+	
+	script(src='javascripts/lib/jquery.js')
+	script(src='javascripts/lib/bootstrap.js')
+	script(src='javascripts/publicPolls.js')

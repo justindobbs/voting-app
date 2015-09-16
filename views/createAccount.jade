@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	div(class='container-fluid')
+		div(class='row')
+			div(class='col-sm-6 col-sm-offset-3')
+				h1(class='')
+					= title
+				form#formCreateAccount(name="createAccount",method="post",action="/createAccount")
+					div(class='form-group')
+						label(for='inputName')
+							|	User Name
+						input#inputName(required type="text", placeholder="username", name="username" class='form-control')
+					div(class='form-group')
+						label(for='inputEmail')
+							|	Email
+						input#inputEmail(required type="text", placeholder="email", name="useremail" class='form-control')
+					div(class='form-group')
+						label(for='inputPassword')
+							|	Password
+						input#inputPassword(required type="password", placeholder="password", name="password" class='form-control')
+					input#submitAccount(class='form-control' type='submit' value="Submit")
+				br
+				span= emailMessage ? emailMessage : ""
+				p=	passwordMessage ? passwordMessage : ""

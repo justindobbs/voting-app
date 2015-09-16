@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	link(rel='stylesheet' href='stylesheets/bootstrap.css')
+	div(class='container-fluid')
+		div(class='col-sm-4 col-sm-offset-4')
+			h1= title
+			p Welcome to #{title}
+			br
+			div
+				a#loginBtn(role='button' class='btn btn-default btn-block' href='login')
+					| Login
+			br
+			div
+				a#createBtn(role='button' class='btn btn-default btn-block' href='createAccount')
+					| Create Account

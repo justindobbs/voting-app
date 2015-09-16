@@ -1,0 +1,43 @@
+/***glyphicons***/
+
+.glyphicon-remove{
+	padding: 3px;
+}
+
+.glyphicon-remove:hover{
+	transition: background .3s ease;
+	background: black;
+	cursor:pointer;
+}
+
+/***modals***/
+
+.modal-body{
+	color: #222;
+}
+
+/***navs***/
+
+.nav-pills{
+	background: rgb(40,49,59);
+	color: #eee;
+}
+
+.nav-pills > li > a:hover {
+	color: black;
+}
+
+.nav-pills > li > a {
+	color: #fff;
+	border-radius: 0px;
+}
+.nav-pills > li + li {
+  margin-left: 2px;
+	border-radius: 0px;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: rgba(12,112,180,0.8);
+}

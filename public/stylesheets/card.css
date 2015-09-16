@@ -1,0 +1,56 @@
+.card{
+	border-radius: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  box-shadow: 0 2px 36px 1px rgba(0,0,0,0.4);
+  margin: 20px auto;
+  opacity: 1;
+}
+
+.card-top{
+	background: black;
+	color: #eee;
+	margin: 0;
+}
+
+.card-top h2{
+	text-align: center;
+	padding: 5px;
+}
+
+.card-body{
+	padding: 1em;
+	background: white;
+}
+
+.card-list{
+	border: dotted 1px rgba(40,49,59,0.9);
+	border-radius:10px;
+	margin: .25em;
+	color: #111;
+}
+
+.card-body input{
+	width: 80%;
+	margin: auto;
+	margin-top: 2em;
+	margin-bottom: 1.5em;
+}
+
+.card-body details{
+	width: 100%;
+	padding: 10px;
+	min-height: 55px;
+}
+
+@media (min-width: 640px){
+
+	.card{
+		max-width: 500px;
+	}
+	
+	.card-body{
+		padding: 1.5em;
+	}
+
+}
